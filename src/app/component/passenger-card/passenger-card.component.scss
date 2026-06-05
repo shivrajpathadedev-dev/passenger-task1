@@ -1,0 +1,28 @@
+
+
+.form-control:disabled{
+    background-color: transparent;
+    opacity: 1;
+    border-color: transparent;
+    font-weight: bold;
+}
+
+.fullnamecontrol{
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        background-color: red;
+        height: 15px;
+        width: 15px;
+        opacity: 1;
+        border-radius: 50%;
+        top: 11px;
+        left: -8px;
+    }
+}
+
+.fullnamecontrol.ischeck::after{
+    background-color: green;
+}

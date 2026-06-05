@@ -10,7 +10,7 @@ import { PassengerService } from 'src/app/service/passenger.service';
 export class PassengerDashboardComponent implements OnInit {
 
   passdata!:Array<Ipassenger>
-  checkeddata!:Array<Ipassenger>
+  checkeddata!:number
   constructor(
     private _passenger:PassengerService
   ) { }
@@ -20,10 +20,15 @@ export class PassengerDashboardComponent implements OnInit {
       this.passdata=res
     })
 
-    this._passenger.getcheckdata().subscribe(res=>{
-      this.checkeddata=res
-    })
+    // this._passenger.getcheckdata().subscribe(res=>{
+    //   this.checkeddata=res
+    // })
   }
+get getcheckdata():number{
+  return this.checkeddata=this.passdata.filter(t =>((t.checkedIn))).length
+  }
+    
+  
 
   trackfun(index:number,item:Ipassenger){
     return item.id

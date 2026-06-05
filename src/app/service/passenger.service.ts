@@ -43,10 +43,7 @@ passenger:Array<Ipassenger>=[{
     return of(this.passenger)
   }
 
-  getcheckdata():Observable<Ipassenger[]>{
-    let arr=this.passenger.filter(ele=>ele.checkedIn)
-    return of(arr)
-  }
+  
 
   Removepassanger(id: string): Observable<Ires<Ipassenger>> {
     let getindex = this.passenger.findIndex(ele => ele.id === id)
